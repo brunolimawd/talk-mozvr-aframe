@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8">
+		<title>O realístico mundo do WebVR com A-Frame</title>
+		<meta name="description" content="Uma talk sobre WebVR com A-Frame">
+		<meta name="author" content="Bruno Lima">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+		<link rel="stylesheet" href="css/theme/moz-pink.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<script src="plugins/aframe.min.js"></script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+	        <img src="img/cover.png" alt="WebVR" class="poster" />
+	        <h1>O <em>realístico</em> mundo do <em><strong>WebVR</strong></em> com <strong class="big">A-Frame</strong></h1>
+	      </section>
+				<section>
+	        <img src="img/avatar.jpg" alt="Eu" class="avatar">
+	        <h2>Bruno Lima</h2>
+	        <ul>
+	          <li>Front-end Developer @ CESAR</li>
+	          <li>Mozillian</li>
+	          <li>NodeBots Recife</li>
+	        </ul>
+	      </section>
+				<section>
+					<h1><strong class="really-big">VR</strong></h1>
+					<h1><strong>V</strong>irtual <strong>R</strong>eality</h1>
+					<p>[<em>Realidade Virtual</em>]</p>
+				</section>
+				<section data-background="img/Stanley_G._Weinbaum.jpg">
+					<h1><strong>Stanley G. Weinbaum</strong></h1>
+					<p>Pygmalion's Spectacles, 1935</p>
+				</section>
+				<section>
+					<h1><em class="really-big">30's</em></h1>
+				</section>
+				<section data-background="img/View-Master_with_Reel.jpg" ></section>
+				<section>
+					<h1><em class="really-big">50's</em></h1>
+				</section>
+				<section data-background="img/Sensorama-morton-heilig-virtual-reality-headset.jpg" ></section>
+				<section data-background="img/sensorama-wireframe.jpg" ></section>
+				<section>
+					<h1><em class="really-big">90's</em></h1>
+				</section>
+				<section data-background="img/viewerVirtualBoy.jpg" >
+					<h1><em><strong>Virtual Boy</strong></em></h1>
+				</section>
+				<section data-background="img/VirtualBoy-03.jpg" ></section>
+				<section data-background="img/virtual-boy-2.jpg" ></section>
+				<section>
+					<h1><strong class="really-big">?</strong></h1>
+				</section>
+				<section data-background="img/maxresdefault.jpg"></section>
+				<section data-background="img/The-Oculus-Rift-headset-i-012.jpg"></section>
+				<section data-background="img/hero.jpg"></section>
+				<section data-background="img/oculos-vr.gif"></section>
+				<section data-background="img/Mm_9uEDYBlwcz8B5VtG9g.jpeg"></section>
+				<section data-background="img/mozandgoogle.png" data-background-size="1024px"></section>
+				<section>
+					<h1><strong class="big">WebVR</strong></h1>
+				</section>
+				<section data-background="img/mozVr.jpg">
+					<h1><em><strong>MozVR</strong></em></h1>
+				</section>
+				<section data-background="img/aframe-team.jpg" data-background-size="512px" data-background-repeat="repeat">
+					<h1><strong class="big">A-Frame</strong></h1>
+				</section>
+				<section>
+					<h2>Instalando</h2>
+					<pre>
+						<code data-trim contenteditable>
+https://aframe.io/releases/0.2.0/aframe.min.js
+
+$ npm install aframe
+					</code>
+				</pre>
+				</section>
+				<section>
+					<h2>Hello World</h2>
+					<pre>
+						<code class="html" data-trim contenteditable>
+<a-scene>
+  <a-box color="#cccccc" width="5" height="5" depth="5"></a-box>
+</a-scene>
+					</code>
+				</pre>
+				</section>
+				<section>
+					<pre>
+						<code class="html" data-trim contenteditable>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="https://aframe.io/releases/0.2.0/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-box color="#cccccc" width="2" height="2" depth="2"&gt;&lt;/a-box&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+						</code>
+					</pre>
+				</section>
+				<section>
+					<iframe src="exemplo1.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section data-background="img/xboxone-controller.png" data-background-size="800px">
+					<h1><em class="big">Controles</em></h1>
+				</section>
+				<section data-background="img/physiologicalconsiderations_headtracking.png" data-background-size="600px"></section>
+				<section>
+					<pre>
+						<code class="html" data-trim contenteditable>
+<a-scene>
+  <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E">
+  </a-sphere>
+  <a-cube width="1" height="1" depth="1" color="#4CC3D9">
+  </a-cube>
+  <a-cylinder radius="0.5" height="1.5"
+  color="#FFC65D">
+  </a-cylinder>
+  <a-plane width="4" height="4" color="#7BC8A4">
+  </a-plane>
+  <a-sky color="#ECECEC"></a-sky>
+</a-scene>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<iframe src="exemplo2.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section>
+					<video controls class="videos-ok">
+						<source data-src="videos/2016_04_23_07_01_46_07_18_09.mp4" type="video/mp4" />
+					</video>
+				</section>
+				<section data-background="img/interactivepatterns_controls_fusebuttons.png" data-background-size="1024px"></section>
+				<section>
+					<iframe src="exemplo3.html" width="800px" height="600px" class="iframe"></iframe>
+				</section>
+				<section>
+					<video controls class="videos-ok">
+						<source data-src="videos/2016_04_23_07_03_45_07_17_54.mp4" type="video/mp4" />
+					</video>
+				</section>
+				<section>
+					<h1><strong class="big">360˚</strong></h1>
+				</section>
+				<section>
+					<pre>
+						<code class="html" data-trim contenteditable>
+<a-scene>
+	<a-sky src="foto.jpg" rotation="0 -130 0"></a-sky>
+</a-scene>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<video controls class="videos-ok">
+						<source data-src="videos/2016_04_23_07_05_44_07_17_39.mp4" type="video/mp4" />
+					</video>
+				</section>
+				<section>
+					<h2>Mais detalhes</h2>
+					<ul>
+						<li><a href="https://aframe.io/">A-Frame - aframe.io</a></li>
+						<li><a href="http://aframevr.tumblr.com/">Made With A-Frame Tumblr - aframevr.tumblr.com</a></li>
+						<li><a href="https://github.com/aframevr/awesome-aframe">awesome-aframe list - github.com/aframevr/awesome-aframe</a></li>
+						<li><a href="http://mozvr.com">MOZVR - mozvr.com</a></li>
+						<li><a href="http://webvr.info/">WebVR Bringing Virtual Reality to the Web - webvr.info</a></li>
+						<li><a href="https://mozvr.github.io/webvr-spec/">WebVR Spec</a></li>
+						<li><a href="https://hacks.mozilla.org/2016/03/introducing-the-webvr-1-0-api-proposal/">Introducing the WebVR 1.0 API Proposal</a></li>
+					</ul>
+				</section>
+	      <section>
+					<h1>#JSdayCG</h1>
+					<h3>#WebVR #MozVR #MozillaBrasil</h3>
+					<br>
+	        <h2>Obrigado! :metal:</h2>
+					<ul>
+						<li><a href="http://brunolima.io/talk-mozvr-aframe/">brunolima.io/talk-mozvr-aframe</a></li>
+						<li><a href="http://twitter.com/brunolimawd">@brunolimawd</a></li>
+						<li><a href="mailto:bruno.lima@cesar.org.br">bruno.lima@cesar.org.br</a></li>
+						<li><a href="http://fb.com/brunolimawd">fb.com/brunolimawd</a></li>
+					</ul>
+	      </section>
+			</div>
+			<div class="hashtag-moz">
+				<p>#WebVR</p>
+				<p>#MozVR</p>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					// { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/emojify/js/emojify.js', async: true, callback: function() { emojify.setConfig({ img_dir: 'plugin/emojify/images/basic' }); emojify.run(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
